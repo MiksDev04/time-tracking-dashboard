@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   font-family: Rubik;
+}
+
+*, *::before, *::after{
+   box-sizing: border-box;
+}
+
+:root{
+    /* ## Colors */
+
+    /* ### Primary */
+    
+    --Blue: hsl(246, 80%, 60%);    
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+    
+    /* ### Neutral */
+    
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+    
+    /* font size*/
+    --fs: 18px;
+    --fw300: 300;
+    --fw400: 400;
+    --fw500: 500;
+}
+
+body{
+   background-color: var(--Very-dark-blue);
+   min-height: 100dvh;
+   display: flex;
+}
+
+.wrapper{
+    margin: auto;
+    display: grid;
+    gap: 1.5rem;
+    width: clamp(320px, 80%, 1000px);
+    padding: 5rem 0;
+}
+
+
+
+
+/* profile */
+header{
+    background-color: var(--Dark-blue);
+    display: grid;
+    justify-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.profile{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--Blue);
+    border-radius: 1rem;
+}
+.profile-content{
+    display: grid;
+    gap: .5rem;
+}
+.profile-content h3{
+    color: white;
+    font-weight: var(--fw300);
+    font-size: 21px;
+}
+.profile-content h4{
+    color: var(--Pale-Blue);
+    font-weight: var(--fw300);
+}
+.profile-img{
+    border: 2px solid white;
+    border-radius: 50%;
+    content: url('./images/image-jeremy.png');
+    width: 5rem;
+    aspect-ratio: 1;
+}
+.option-list{
+    width: 100%;
+    display: flex;
+    padding: 1.5rem 0;
+    align-items: center;
+    justify-content: space-around;
+    font-size: var(--fs);
+    color: var(--Desaturated-blue);
+}
+.option-list label:hover{
+    color: white;
+}
+.option-list input:checked + label{
+    color: white;
+}
+.option-list input{
+    display: none;
+}
+
+/* dashboards sections */
+.dashboards{
+    padding-top: 2.5rem;
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.dashboards > svg{
+    position: absolute;
+    right: 1rem;
+    top: -10px;
+}
+.dashboards .dashboard-title{
+    z-index: 1;
+    display: grid;
+    background-color: var(--Dark-blue);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    gap: .5rem;
+}
+.dashboards .dashboard-title:hover{
+    background-color: rgb(42, 42, 130);
+}
+.dashboard-title .labels{
+    color: white;
+    font-weight: var(--fw500);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard-title .time-span{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.time-span .current{
+    font-size: 2.3rem;
+    color: white;
+    font-weight: var(--fw300);
+}
+.time-span .previous{
+    font-size: 15px;
+    color: var(--Pale-Blue);
+    font-weight: var(--fw400);
+}
+
+/* design each one */
+.dashboard1{
+    background-color: var(--Light-red-work);
+}
+.dashboard2{
+    background-color: var(--Soft-blue-play);
+}
+.dashboard3{
+    background-color: var(--Light-red-study);
+}
+.dashboard4{
+    background-color: var(--Lime-green-exercise);
+}
+.dashboard5{
+    background-color: var(--Violet-social);
+}
+.dashboard6{
+    background-color: var(--Soft-orange-self-care);
+}
+
+/* layout */
+@media (min-width: 600px) {
+    .wrapper{
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-columns: minmax(200px, auto-fit);
+    }
+    header{
+        grid-row: span 2;
+    }
+    header .profile{
+        display: grid;
+        gap: 2rem;
+        padding-bottom: 5rem;
+    }
+    header .profile-content h3{
+        font-size: 2.5rem;
+    }
+    header .profile{
+        flex-direction: column;
+        align-items: start;
+    }
+    header .option-list{
+        padding: 2rem;
+        gap: 1.5rem;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .dashboards .dashboard-title{
+        padding: 2.5rem;
+        gap: 2rem;
+    }
+    .dashboard-title .time-span{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .dashboard-title .time-span .current{
+        font-size: 4rem;
+    }
+}
