@@ -213,6 +213,6 @@ header{
         flex-direction: column;
     }
     .dashboard-title .time-span .current{
-        font-size: 4rem;
+        font-size: 3rem;
     }
 }
