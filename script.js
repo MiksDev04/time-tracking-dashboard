@@ -41,7 +41,7 @@ function locateData(value, obj) {
         if (value === 'daily') {
             dashboardTitle[index].textContent = dataObj.title;
             currentTime[index].textContent = `${dataObj.timeframes.daily.current}hrs`;
-            previousTime[index].textContent = `Last day -${dataObj.timeframes.daily.previous}hrs`;
+            previousTime[index].textContent = `Yesterday -${dataObj.timeframes.daily.previous}hrs`;
         } else if (value === 'weekly') {
             dashboardTitle[index].textContent = dataObj.title;
             currentTime[index].textContent = `${dataObj.timeframes.weekly.current}hrs`;
